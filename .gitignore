@@ -1,0 +1,51 @@
+# =========================
+# Entornos virtuales
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Python cache
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Archivos de sistema
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Archivos de entorno
+# =========================
+.env
+
+# =========================
+# Archivos de build o packaging
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Archivos temporales
+# =========================
+*.log
+*.tmp
+
+# =========================
+# Archivos generados por IDE
+# =========================
+.vscode/
+.idea/
