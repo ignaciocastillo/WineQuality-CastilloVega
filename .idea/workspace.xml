@@ -7,6 +7,7 @@
     <list default="true" id="ee83ad29-d3a8-491a-930a-47072d88d95c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/analisis_vino.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/analisis_vino.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/tables/estadisticas_descriptivas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/outputs/tables/estadisticas_descriptivas.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/paquete_analisis_vino.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/paquete_analisis_vino.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
