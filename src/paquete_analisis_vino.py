@@ -90,6 +90,7 @@ class AnalisisVino:
         # Separar quality para los métodos no supervisados
         self.y = self.df["quality"].copy()
         self.X = self.df.drop(columns=["quality"]).copy()
+        print("separar_quality ejecutado correctamente — X:", self.X.shape, "| y:", self.y.shape)
 
     def escalar_variables(self) -> pd.DataFrame:
         # Verificar que las variables ya estén separadas
@@ -116,6 +117,7 @@ class AnalisisVino:
         if guardar:
             fig.savefig(self.fig_path / "distribucion_quality.png", dpi=300)
 
+        plt.close(fig)
         return fig
 
     def matriz_correlacion(self, guardar: bool = True) -> pd.DataFrame:
@@ -207,6 +209,7 @@ class AnalisisVino:
         if guardar:
             fig.savefig(self.fig_path / "scree_plot.png", dpi=300)
 
+        plt.close(fig)
         return fig
 
     def pca_loadings(self) -> pd.DataFrame:
@@ -296,6 +299,7 @@ class AnalisisVino:
         if guardar:
             fig.savefig(self.fig_path / "kmeans_elbow.png", dpi=300)
 
+        plt.close(fig)
         return fig
 
     def grafico_silhouette_kmeans(self, k_min: int = 2, k_max: int = 6, guardar: bool = True):
@@ -312,6 +316,7 @@ class AnalisisVino:
         if guardar:
             fig.savefig(self.fig_path / "kmeans_silhouette.png", dpi=300)
 
+        plt.close(fig)
         return fig
 
     def ejecutar_kmeans(self, k: int = 3, n_init: int = 10) -> pd.DataFrame:
@@ -457,6 +462,7 @@ class AnalisisVino:
         if guardar:
             fig.savefig(self.fig_path / f"dendrograma_{linkage_method}.png", dpi=300)
 
+        plt.close(fig)
         return fig
 
     def ejecutar_tsne(
@@ -541,6 +547,7 @@ class AnalisisVino:
         if guardar:
             fig.savefig(self.fig_path / nombre_archivo, dpi=300)
 
+        plt.close(fig)
         return fig
 
     def ejecutar_umap(
@@ -631,4 +638,5 @@ class AnalisisVino:
         if guardar:
             fig.savefig(self.fig_path / nombre_archivo, dpi=300)
 
+        plt.close(fig)
         return fig
