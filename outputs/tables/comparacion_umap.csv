@@ -1,0 +1,4 @@
+modelo,n_neighbors,min_dist,silhouette_score_2d
+umap_n10_d0.1,10,0.1,0.4626633822917938
+umap_n15_d0.1,15,0.1,0.4750463664531708
+umap_n30_d0.3,30,0.3,0.4108434021472931

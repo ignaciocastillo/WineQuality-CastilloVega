@@ -400,7 +400,7 @@ class AnalisisVino:
         resumen.to_csv(self.tab_path / f"resumen_{cluster_col}.csv")
         return resumen
 
-    def ejecutar_hac(self, n_clusters: int = 3, linkage_method: str = "ward") -> pd.DataFrame:
+    def ejecutar_hac(self, n_clusters: int = 3, linkage_method: str = "average") -> pd.DataFrame:
         # Ejecutar clustering jerárquico aglomerativo
         if self.X_scaled is None:
             raise ValueError("Primero debe ejecutar escalar_variables().")
@@ -463,6 +463,38 @@ class AnalisisVino:
             fig.savefig(self.fig_path / f"dendrograma_{linkage_method}.png", dpi=300)
 
         plt.close(fig)
+        return fig
+
+    def graficar_pairplot_hac(self, n_clusters: int = 3, linkage_method: str = "average", guardar: bool = True):
+        """Visualizar clusters en todas las combinaciones de variables"""
+        if self.X_scaled is None:
+            raise ValueError("Primero debe ejecutar escalar_variables().")
+
+        # Ejecutar HAC
+        modelo = AgglomerativeClustering(
+            n_clusters=n_clusters,
+            linkage=linkage_method
+        )
+        labels = modelo.fit_predict(self.X_scaled)
+
+        # Preparar DataFrame para pairplot
+        resultado = self.df.copy()
+        resultado["cluster_hac"] = labels
+
+        # Crear pairplot
+        fig = sns.pairplot(
+            resultado,
+            hue='cluster_hac',
+            palette='viridis',
+            diag_kind='kde'
+        )
+
+        fig.fig.suptitle(f"Pairplot HAC ({linkage_method}) - k={n_clusters}", y=1.01)
+
+        if guardar:
+            fig.savefig(self.fig_path / f"pairplot_hac_{linkage_method}_k_{n_clusters}.png", dpi=300)
+
+        plt.close()
         return fig
 
     def ejecutar_tsne(

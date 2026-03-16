@@ -1,0 +1,4 @@
+modelo,perplexity,silhouette_score_2d
+tsne_perplexity_5,5,0.3790741264820099
+tsne_perplexity_30,30,0.4117068946361542
+tsne_perplexity_50,50,0.4399665892124176

@@ -1,0 +1,4 @@
+modelo,linkage,n_clusters,silhouette_score
+hac_ward,ward,3,0.157746788212662
+hac_complete,complete,3,0.3556638927506627
+hac_average,average,3,0.563166841842326
